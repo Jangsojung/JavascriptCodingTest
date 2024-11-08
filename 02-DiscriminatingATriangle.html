@@ -6,9 +6,7 @@
   <body>
     <script>
       function solution(a, b, c) {
-        let answer = 'YES',
-          max;
-        max = Math.max(a, Math.max(b, c));
+        let max = Math.max(a, Math.max(b, c));
 
         if (max < a + b + c - max) {
           return 'YES';
