@@ -7,19 +7,22 @@
     <script>
       function solution(arr) {
         let answer = arr;
-        let sum = answer.reduce((a, b) => a + b, 0); //a에다 b를 더함 (a는 값이 더해진 값, b는 더해질 값)
-        let flag = 0;
 
-        for (let i = 0; i < 8; i++) {
-          for (let j = i + 1; j < 9; j++) {
-            if (sum - (arr[i] + arr[j]) == 100) {
-              arr.splice(j, 1); //splice(a,b) a위치 b만큼 제거
-              arr.splice(i, 1); //앞에껄 먼저 지우면 땡겨지니까 뒤에꺼 먼저 지우기
-              flag = 1;
-              break;
+        // 모든 수의 합: reduce()
+        // 배열.reduce((누적값, 현재값), 초기값);
+        let sum = answer.reduce((prev, curr) => {
+          return prev + curr;
+        }, 0);
+        // let sum = answer.reduce((prev, curr) => prev + curr, 0);
+
+        for (let i = 0; i < answer.length - 1; i++) {
+          for (let j = 1; j < answer.length; j++) {
+            if (sum - (answer[i] + answer[j]) === 100) {
+              answer.splice(j, 1); // splice(a,b) a위치 b만큼 제거
+              answer.splice(i, 1); // 앞에껄 먼저 지우면 땡겨지니까 뒤에꺼 먼저 지우기
+              return answer;
             }
           }
-          if (flag == 1) break;
         }
 
         return answer;
