@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      // forEach, map, filter, reduce  => 고차 함수: 자신의 매개변수에 함수를 전달 받는 함수
+      /* 강사님 뇌피셜 부분
+      function forEach(predicate, thisArg) {
+        //predicate: 함수
+        for (let i = 0; i < a.lenth; i++) {
+          // thisArg는 생략 가능
+          // => forEach에는 (콜백)함수를 넣어야 한다.
+          predicate(a[i], i); //값, idx번호
+        }
+      } */
+      a = [10, 11, 12, 13, 14, 15];
+      a.forEach(
+        function (v, i) {
+          //v: 요소 i: idx
+          console.log(v, i, this); //forEach가 아닌 forEach의 내부
+        },
+        [1, 2] // 배열: thisArg. 콜백함수 내부의 this에 바인딩
+      ); //하나하나 콜백함수 실행
+    </script>
+  </body>
+</html>
