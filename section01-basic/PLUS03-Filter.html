@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      /* 강사님 뇌피셜 부분
+      function filter(predicate, thisArg) {
+        let list = [];
+        for (let i = 0; i < a.length; i++) {
+          if (predicate(a[i], i)) {
+            list.push(a[i]);
+          }
+        }
+        return list;
+      } */
+
+      a = [10, 11, 12, 13, 14, 15];
+
+      // map != filter map은 배열 길이 그대로, filter는 필요한 요소만 배열 생성
+      // filter는 map처럼 값 변경 X. 원본 값 중 특정 값 걸러내는 용도. 새로운 값 만드는거 X
+      let answer = a.filter(
+        function (v, i) {
+          return v % 2 == 0; // 원하는 원소로만 배열 생성
+          //여기서 return v * 2 해도 filter는 값 그대로 나옴. 참, 거짓만 본다고 생각
+        },
+        [1, 2]
+      );
+      console.log(answer);
+    </script>
+  </body>
+</html>
