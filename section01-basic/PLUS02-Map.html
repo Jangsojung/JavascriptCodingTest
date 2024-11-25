@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      /* 강사님 뇌피셜 부분
+      function map(predicate, thisArg) {
+        let list = [];
+        for (let i = 0; i < a.length; i++) {
+          list.push(predicate(a[i], i));
+        }
+        return list;
+      } */
+      a = [10, 11, 12, 13, 14, 15];
+
+      // map: 요소를 탐색하며 새로운 배열 생성
+      let answer = a.map(
+        function (v, i) {
+          if (v % 2 == 0) {
+            return v; // 원본 배열과 길이 동일 -> 홀수엔 undefined 저장
+          }
+        },
+        [1, 2]
+      );
+      console.log(answer);
+      // => map이 생성하는 배열은 무조건 원본 배열과 길이가 같다 !
+    </script>
+  </body>
+</html>
