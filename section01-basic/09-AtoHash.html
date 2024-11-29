@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        return s.replaceAll('A', '#');
+        // 대문자 A를 바꿈 /A/ 다 바꾸기 위해 g(global) 추가
+        // return s.replace(/A/g, '#');
+      }
+
+      let str = 'BANANA';
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
